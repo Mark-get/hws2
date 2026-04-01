@@ -1,0 +1,37 @@
+.message {
+    padding: 20px;
+
+}
+.imageAndText {
+    background-color: #7a7aea;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.imageAndText img {
+    height: 80px;
+    width: 80px;
+
+}
+
+.text {
+    font-size: 1em;
+    color: white;
+    padding: 10px;
+}
+
+.text:after {
+
+}
+
+.name {
+    color: white;
+}
+
+.messageText {
+
+}
+
+.time {
+
+}
