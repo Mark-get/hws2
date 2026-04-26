@@ -2,12 +2,14 @@
 }
 
 .disabled {
+    color: gray;
 }
 
 .secondary {
 }
 
 .default {
+    color: blue;
 }
 
 .red {
