@@ -52,6 +52,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
         if(!e.relatedTarget) {
             setEditMode(false);
         }
+        console.log(e.relatedTarget)
         onBlur?.(e)
     }
     const onDoubleClickCallBack = (
