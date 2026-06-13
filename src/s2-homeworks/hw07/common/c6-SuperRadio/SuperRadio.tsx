@@ -39,7 +39,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 
         onChange?.(e)
 
-        const selectedOption = mappedOptions.find(o => o.id === e.currentTarget.value)
+        const selectedOption = options?.find(o => String(o.id) === e.currentTarget.value)
         onChangeOption?.(selectedOption)
     }
 
@@ -53,10 +53,11 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                       id={id + '-input-' + o.id}
                       className={finalRadioClassName}
                       type={'radio'}
-                      // name, checked, value делают студенты
                       name={name}
-                      checked={value === o.value}
-                      value={o.value}
+                      checked={value === o.id}
+                      value={o.id}
+                      // name, checked, value делают студенты
+
                       onChange={onChangeCallback}
                       {...restProps}
                   />
