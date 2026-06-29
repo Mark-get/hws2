@@ -32,11 +32,11 @@ function Clock() {
     }
 
     const stringTime = `${date.toLocaleTimeString('en-GB', {hour: "2-digit", minute: "2-digit", second:"2-digit", hour12:false})}` || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = `${date.toLocaleDateString('en-GB', {day: "2-digit", month: '2-digit', year:"numeric"})}` // день.месяц.год (01.02.2022) // пишут студенты, варианты
+    const stringDate = `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}.${date.getFullYear()}` // день.месяц.год (01.02.2022) // пишут студенты, варианты
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = `${date.toLocaleDateString(undefined, {day: 'numeric', })}` || <br/> // пишут студенты
-    const stringMonth = `${date.toLocaleDateString(undefined, {month: 'numeric', })}` || <br/> // пишут студенты
+    const stringDay = `${date.toLocaleDateString('en-GB', {weekday:'long' })}` || <br/> // пишут студенты
+    const stringMonth = `${date.toLocaleDateString('en-GB', {month: 'long', })}` || <br/> // пишут студенты
 
     return (
         <div className={s.clock}>
