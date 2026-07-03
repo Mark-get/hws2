@@ -22,11 +22,11 @@ const HW10 = () => {
     const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
         // dispatch
 
-        dispatch(loadingAC(isLoading))
+        dispatch(loadingAC(true))
 
         setTimeout(() => {
 
-            dispatch(loadingAC(true))
+            dispatch(loadingAC(false))
         }, 1500)
     }
 
@@ -44,7 +44,8 @@ const HW10 = () => {
                         id={'hw10-button-start-loading'}
                         onClick={setLoading}
                     >
-                        Set loading...
+                        {isLoading ? <Loader/> : <SuperButton  id={'hw10-button-start-loading'} onClick={setLoading}/>}
+
                     </SuperButton>
                 )}
             </div>
