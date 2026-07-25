@@ -44,18 +44,16 @@ const HW13 = () => {
 
             })
             .catch((e) => {
-                console.log(e)
-                // дописать
-                if (e.response) {
-                    setCode(` ${e.response.status}`)
-                    setText(e.response.data.errorText)
-                    setInfo(e.response.data.info)
-                    setImage(e.response.status === 400 ? error400 : error500)
-                } else {
+                if (e.code === 'ERR_NETWORK' || !e.response) {
                     setCode('Error')
                     setText(e.message)
                     setInfo(e.message)
                     setImage(errorUnknown)
+                } else {
+                    setCode(`${e.response.status}`)
+                    setText(e.response.data.error)
+                    setInfo(e.response.data.info)
+                    setImage(e.response.status === 400 ? error400 : error500)
                 }
             }) .finally(() => {
             //setInfo('')
