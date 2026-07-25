@@ -100,8 +100,8 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        disabled={disabled}
                         // дописать
+                        disabled={disabled}
 
                     >
                         Send null
