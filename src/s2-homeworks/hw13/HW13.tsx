@@ -39,20 +39,20 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-                setText(res.data.info)
-                setInfo(res.statusText)
+                setText(res.data.text)
+                setInfo(res.data.info)
             })
             .catch((e) => {
-                if (e.response) {
+                if (e.response && e.response.data) {
                     setCode(`Код ${e.response.status}!`)
                     setImage(e.response.status === 400 ? error400 : error500)
                     setText(e.response.data.errorText)
-                    setInfo(e.response.statusText)
+                    setInfo(e.response.data.info)
                 } else {
                     setCode('Ошибка!')
                     setImage(errorUnknown)
                     setText(e.message)
-                    setInfo('Ошибка, проверьте интернет-соединение')
+                    setInfo(e.message)
                 }
             })
             .finally(() => setIsLoading(false))
